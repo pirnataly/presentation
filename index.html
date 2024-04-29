@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h1>SVG</h1></section>
+    <section><p>SVG or Scalable Vector Graphics is a World Wide Web Consortium (W3C) standard. <br>It is used for the
+      creation and display of vector graphic material. <br>The first public draft of SVG was released by the World Wide
+      Web consortium in February of 1999.</p>
+    </section>
+    <section>
+      <h2>Browser support</h2>
+      <img data-src="caniuse.png" alt="">
+    </section>
+    <section>
+      <h2>Advantages of SVG</h2>
+      <ul>
+        <li>Much smaller than bitmaps</li>
+        <li>Can be scaled without the pixelation</li>
+        <li>Reducing the server load and network response time</li>
+        <li>The end-user can interact with the graphics without costly client-server communications</li>
+        <li>Native support for SMIL (Synchronized Media Integration Language)</li>
+        <li>It responds to JavaScript</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Coordinate system</h2>
+      <img data-src="coord.png" alt="Coordinatate system photo">
+    </section>
+    <section>
+      <section>
+        <h2>Basic figures</h2>
+        <p>The object primitives are the line, rect(angle), circle, ellipse, polyline, polygon, text, and the path.
+          <br>Each is described with an XML tag</p>
+      </section>
+      <section>
+        <h2>Line</h2>
+        <img data-src="line.png" alt="Line photo">
+      </section>
+      <section>
+        <h2>Rectangle</h2>
+        <img data-src="rectangle.png" alt="Rectangle photo">
+      </section>
+      <section>
+        <h2>Text</h2>
+        <img data-src="text.png" alt="Text photo">
+      </section>
+      <section>
+        <h2>Ellipse</h2>
+        <img data-src="ellipse.png" alt="Ellipse photo">
+      </section>
+      <section>
+        <h2>path</h2>
+        <img data-src="Path_1.png" alt="path photo">
+      </section>
+      <section>
+        <h2>image</h2>
+        <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+          <image xlink:href="filename" x="100" y="100" width="150" height="200"/>
+        </code></pre>
+      </section>
+    </section>
+    <section>
+      <section>
+        <h2>Operations</h2>
+        <p>Transform/translate | Transform/rotate | Transform/scale| multiple transformations | grouping|
+          Inheriting|use</p>
+      </section>
+      <section>
+        <li style="list-style-type: none"><h4>Transform/translate</h4>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+              transform=translate(dx,dy)
+              </code></pre>
+        </li>
+      </section>
+      <section>
+
+        <li style="list-style-type: none"><h4>Transform/rotate</h4>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+              transform="rotate(120,219.5,241)"
+              </code></pre>
+          <img data-src="rotate.png" alt="rotate photo">
+        </li>
+      </section>
+      <section>
+        <li style="list-style-type: none"><h4>Transform/scale</h4>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+              transform="rotate(120,219.5,241)"
+              </code></pre>
+          <img data-src="scale.png" alt="scale photo">
+        </li>
+
+      </section>
+      <section>
+        <li style="list-style-type: none"><h4>Multiple transformations</h4>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+           transform="translate(-100,-50),scale(1.5)"
+              </code></pre>
+        </li>
+      </section>
+      <section>
+        <li style="list-style-type: none"><h4>Grouping</h4>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+           transform="translate(-100,-50),scale(1.5)"
+              </code></pre>
+        </li>
+      </section>
+      <section>
+        <li style="list-style-type: none"><h4>Inheriting</h4>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+           someNamedAttribute="inherit"
+              </code></pre>
+        </li>
+
+      </section>
+      <section>
+        <li style="list-style-type: none"><h4>Use</h4>
+          <pre><code class="hljs html">
+ <g fill="black">
+ <g id="G">
+<rect x="100" y="100" width="100" height="20" fill="inherit"/>
+<rect x="100" y="160" width="100" height="20" fill="inherit"/>
+<ellipse cx="150" cy="140" rx="30" ry="100" fill="#777"/>
+<rect x="100" y="130" width="100" height="20" fill="inherit"/>
+</g></g>
+<use xlink:href="G" transform="translate(120,0)" fill="#bbb"></use></code></pre>
+        </li>
+
+      </section>
+    </section>
+
+      <section>
+        <h2>SVG Effects</h2>
+        <ul>
+          <li class="fragment">Gradients</li>
+          <li class="fragment">Patterns</li>
+          <li class="fragment">Masks and clip-paths</li>
+          <li class="fragment">Filters</li>
+        </ul>
+      </section>
+   <section>
+        <h2>Embedding SVG in HTML documents</h2>
+        <ol>
+          <li class="fragment">embed</li>
+          <li class="fragment">frame and iframe</li>
+          <li class="fragment">object</li>
+          <li class="fragment">img</li>
+          <li class="fragment">inline content</li>
+        </ol>
+      </section>
+      <section>
+        <h2>More information</h2>
+        <ul>
+        </li style="list-style-type: none"><a href="https://www.w3.org/Graphics/SVG/">https://www.w3.org/Graphics/SVG/</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Thank you!</h2>
+      </section>
+    </section>
+    </section>
+    </section>
+
+  </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+  });
+</script>
+</body>
+</html>
